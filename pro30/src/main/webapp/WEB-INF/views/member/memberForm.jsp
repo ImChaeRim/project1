@@ -99,7 +99,7 @@
     <form id="register-form" name="frmRegister" method="post" action="${contextPath}/member/addMember.do">
         <input type="text" name="id" placeholder="아이디" required>
         <input type="password" name="pwd" placeholder="비밀번호" required>
-        <input type="password" name="name" placeholder="이름" required>
+        <input type="text" name="name" placeholder="이름" required>
         <input type="date" name="birthDate" placeholder="생년월일" required>
         <input type="submit" value="가입하기" onclick="changeButtonColor(this)" />
     </form>
