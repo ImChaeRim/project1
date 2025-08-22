@@ -96,7 +96,7 @@
 
 <div class="register-wrapper">
     <h2>회원가입</h2>
-    <form id="register-form" name="frmRegister" method="post" action="/pro30/member/addMember.do">
+    <form id="register-form" name="frmRegister" method="post" action="${contextPath}/member/addMember.do">
         <input type="text" name="id" placeholder="아이디" required>
         <input type="password" name="pwd" placeholder="비밀번호" required>
         <input type="password" name="name" placeholder="이름" required>
@@ -106,7 +106,7 @@
 
     <hr>
     <div id="login-link">
-        <a href="/pro30/member/loginForm.do">이미 계정이 있으신가요? 로그인</a>
+        <a href="${contextPath}/member/loginForm.do">이미 계정이 있으신가요? 로그인</a>
     </div>
 </div>
 

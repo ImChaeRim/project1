@@ -112,7 +112,7 @@ a {
 <body>
 <div class="login-wrapper">
         <h2>Login</h2>
-        <form id="login-form" name="frmLogin" method="post" action="/pro30/member/login.do">
+        <form id="login-form" name="frmLogin" method="post" action="${contextPath}/member/login.do">
             <input type="hidden" name="url" value="사이트를 통한 직접 로그인">
             <input type="text" name="id" placeholder="id" autofocus></input>
             <input type="password" name="pwd" placeholder="password" autofocus></input>
