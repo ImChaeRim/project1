@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.member">
+
+	<resultMap id="memResult" type="memberVO">
+		<result property="id" column="id" />
+		<result property="pwd" column="pwd" />
+		<result property="name" column="name" />
+		<result property="birthDate" column="birthDate" />
+		<result property="admin" column="is_admin" />
+	</resultMap>
+
+    <select id="selectSearchMemberList" resultMap="memResult"  parameterType="String" >
+      <![CDATA[
+         select * from t_member
+         where name LIKE CONCAT('%', #{name}, '%')		
+      ]]>
+    </select>
+	<select id="selectAllMemberList" resultMap="memResult">
+		SELECT * FROM t_member ORDER BY birthDate DESC
+	</select>	
+	
+	<select id="selectLoginMember" resultMap="memResult" parameterType="memberVO">
+		SELECT * FROM t_member 
+		WHERE id=#{id} and pwd=#{pwd}
+	</select>	
+	
+	<insert id="insertMember"  parameterType="memberVO">
+		 insert into t_member(id,pwd, name, birthDate)
+		 values(#{id}, #{pwd}, #{name}, #{birthDate})
+	</insert>
+	
+	<insert id="updateMember"  parameterType="memberVO">
+		 update t_member 
+		 set pwd = #{pwd},name = #{name}, birthDate = #{birthDate}
+		 where id = #{id}
+	</insert>
+	
+	<insert id="deleteMember"  parameterType="String">
+		 delete from t_member
+		 where id = #{id}
+	</insert>
+
+</mapper>
