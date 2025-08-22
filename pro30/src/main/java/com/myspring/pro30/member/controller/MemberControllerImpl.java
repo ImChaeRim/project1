@@ -90,11 +90,9 @@ public class MemberControllerImpl extends MultiActionController implements Membe
 	    memberVO = memberService.login(member);
 	    
 	    if(memberVO != null) {
-<<<<<<< HEAD
+
 	    	// 관리자 여부 확인
-=======
-	        // 愿�由ъ옄 �뿬遺� �솗�씤
->>>>>>> origin/main
+
 	        if (memberVO.isAdmin()) { 
 	            HttpSession session = request.getSession();
 	            session.setAttribute("member", memberVO); 
